@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-baseURL = '//cupid5trick-docs.github.io'
+baseURL = '//cupid5trick-docs.netlify.app'
 defaultContentLanguage = 'zh'
 languageCode = "zh-cn"
 title = "Apache Flink"
