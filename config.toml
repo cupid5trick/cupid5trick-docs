@@ -21,13 +21,13 @@ title = "Apache Flink"
 enableGitInfo = false
 theme = "book"
 pygmentsUseClasses = true
-disqusShortname = 'yourdiscussshortname'
+disqusShortname = 'cupid5trick'
 disqus_identifier = ""
 disqus_title = ""
 disqus_url = ""
 
 [params]
-GOOGLE_UA = ''
+GOOGLE_UA = 'G-SX3V41BY9E'
 
 ## HUGO Book Params ##
 # (Optional, default light) Sets color theme: light, dark or auto.
