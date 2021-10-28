@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-baseURL = '//nightlies.apache.org/flink/flink-docs-master'
+baseURL = '//cupid5trick-docs.github.io'
 defaultContentLanguage = 'zh'
 languageCode = "zh-cn"
 title = "Apache Flink"
@@ -27,7 +27,7 @@ disqus_title = ""
 disqus_url = ""
 
 [params]
-GOOGLE_UA = 'UA-52545728-1'
+GOOGLE_UA = ''
 
 ## HUGO Book Params ##
 # (Optional, default light) Sets color theme: light, dark or auto.
@@ -41,11 +41,11 @@ BookToC = true
 
 # (Optional, default none) Set the path to a logo for the book. If the logo is
 # /static/logo.png then the path would be 'logo.png'
-BookLogo = 'logo.png'
+# BookLogo = 'logo.png'
 
 # (Optional, default none) Set leaf bundle to render as side menu
 # When not specified file structure and weights will be used
-#BookMenuBundle = '/menu'
+# BookMenuBundle = '/menu'
 
 # (Optional, default docs) Specify section of content to render as menu
 # You can also set value to "*" to render all sections to menu
@@ -53,7 +53,7 @@ BookSection = 'docs'
 
 # Set source repository location.
 # Used for 'Last Modified' and 'Edit this page' links.
-BookRepo = 'https://github.com/alex-shpak/hugo-book'
+BookRepo = 'https://github.com/cupid5trick/cupid5trick-docs'
 
 # Specifies commit portion of the link to the page's last modified commit hash for 'doc' page
 # type.
@@ -65,7 +65,7 @@ BookCommitPath = 'commit'
 # Enable 'Edit this page' links for 'doc' page type.
 # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
 # Path must point to the site directory.
-BookEditPath = 'edit/master/exampleSite'
+BookEditPath = 'edit/main/'
 
 # (Optional, default January 2, 2006) Configure the date format used on the pages
 # - In git information
@@ -113,20 +113,12 @@ Version = "1.15-SNAPSHOT"
 VersionTitle = "1.15-SNAPSHOT"
 
 # The branch for this version of Apache Flink
-Branch = "master"
+Branch = "main"
 
 # The github repository for Apache Flink
-Repo = "//github.com/apache/flink"
-
-GithubRepo = "https://github.com/apache/flink.git"
-
-# Flink training exercises
-TrainingExercises = "//github.com/apache/flink-training"
-
-# This suffix is appended to the Scala-dependent Maven artifact names
-ScalaVersion = "_2.12"
-
-ProjectHomepage = "//flink.apache.org"
+Repo = "//github.com/cupid5trick/cupid5trick-docs"
+GithubRepo = "https://github.com/cupid5trick/cupid5trick-docs"
+ProjectHomepage = "//github.com/cupid5trick/cupid5trick-docs"
 
 
 
