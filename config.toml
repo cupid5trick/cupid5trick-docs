@@ -21,10 +21,10 @@ title = "Apache Flink"
 enableGitInfo = false
 theme = "book"
 pygmentsUseClasses = true
-disqusShortname = 'cupid5trick'
-disqus_identifier = ""
-disqus_title = ""
-disqus_url = ""
+# disqusShortname = 'cupid5trick'
+# disqus_identifier = ""
+# disqus_title = ""
+# disqus_url = ""
 
 [params]
 GOOGLE_UA = 'G-SX3V41BY9E'
