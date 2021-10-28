@@ -1,0 +1,229 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+baseURL = '//nightlies.apache.org/flink/flink-docs-master'
+defaultContentLanguage = 'zh'
+languageCode = "zh-cn"
+title = "Apache Flink"
+enableGitInfo = false
+theme = "book"
+pygmentsUseClasses = true
+disqusShortname = 'yourdiscussshortname'
+disqus_identifier = ""
+disqus_title = ""
+disqus_url = ""
+
+[params]
+GOOGLE_UA = 'UA-52545728-1'
+
+## HUGO Book Params ##
+# (Optional, default light) Sets color theme: light, dark or auto.
+# Theme 'auto' switches between dark and light modes based on browser/os preferences
+BookTheme = 'light'
+
+# (Optional, default true) Controls table of contents visibility on right side of pages.
+# Start and end levels can be controlled with markup.tableOfContents setting.
+# You can also specify this parameter per page in front matter.
+BookToC = true
+
+# (Optional, default none) Set the path to a logo for the book. If the logo is
+# /static/logo.png then the path would be 'logo.png'
+BookLogo = 'logo.png'
+
+# (Optional, default none) Set leaf bundle to render as side menu
+# When not specified file structure and weights will be used
+#BookMenuBundle = '/menu'
+
+# (Optional, default docs) Specify section of content to render as menu
+# You can also set value to "*" to render all sections to menu
+BookSection = 'docs'
+
+# Set source repository location.
+# Used for 'Last Modified' and 'Edit this page' links.
+BookRepo = 'https://github.com/alex-shpak/hugo-book'
+
+# Specifies commit portion of the link to the page's last modified commit hash for 'doc' page
+# type.
+# Required if 'BookRepo' param is set.
+# Value used to construct a URL consisting of BookRepo/BookCommitPath/<commit-hash>
+# Github uses 'commit', Bitbucket uses 'commits'
+BookCommitPath = 'commit'
+
+# Enable 'Edit this page' links for 'doc' page type.
+# Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
+# Path must point to the site directory.
+BookEditPath = 'edit/master/exampleSite'
+
+# (Optional, default January 2, 2006) Configure the date format used on the pages
+# - In git information
+# - In blog posts
+BookDateFormat = 'Jan 2, 2006'
+
+# (Optional, default true) Enables search function with flexsearch,
+# Index is built on fly, therefore it might slowdown your website.
+# Configuration for indexing can be adjusted in i18n folder per language.
+BookSearch = true
+
+# (Optional, default true) Enables comments template on pages
+# By default partials/docs/comments.html includes Disqus template
+# See https://gohugo.io/content-management/comments/#configure-disqus
+# Can be overwritten by same param in page frontmatter
+BookComments = true
+
+# /!\ This is an experimental feature, might be removed or changed at any time
+# (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
+# Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
+# Theme will print warning if page referenced in markdown does not exists.
+BookPortableLinks = true
+
+# /!\ This is an experimental feature, might be removed or changed at any time
+# (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
+BookServiceWorker = true
+
+## Flink Doc Params ##
+# Flag whether this is a stable version or not.
+# Used for the quickstart page.
+IsStable = true
+
+# Flag to indicate whether an outdated warning should be shown.
+ShowOutDatedWarning = false
+
+# This are the version referenced in the docs. Please only use these variables
+# to reference a specific Flink version, because this is the only place where
+# we change the version for the complete docs when forking of a release branch
+# etc.
+# The full version string as referenced in Maven (e.g. 1.2.1)
+Version = "1.15-SNAPSHOT"
+
+# For stable releases, leave the bugfix version out (e.g. 1.2). For snapshot
+# release this should be the same as the regular version
+VersionTitle = "1.15-SNAPSHOT"
+
+# The branch for this version of Apache Flink
+Branch = "master"
+
+# The github repository for Apache Flink
+Repo = "//github.com/apache/flink"
+
+GithubRepo = "https://github.com/apache/flink.git"
+
+# Flink training exercises
+TrainingExercises = "//github.com/apache/flink-training"
+
+# This suffix is appended to the Scala-dependent Maven artifact names
+ScalaVersion = "_2.12"
+
+ProjectHomepage = "//flink.apache.org"
+
+
+
+# External links at the bottom
+# of the menu
+MenuLinks = [
+  ["Github", "//github.com/cupid5trick"],
+]
+
+
+
+[markup]
+defaultMarkdownHandler = 'blackFriday'
+[markup.asciidocExt]
+backend = 'html5'
+extensions = []
+failureLevel = 'fatal'
+noHeaderOrFooter = true
+preserveTOC = false
+safeMode = 'unsafe'
+sectionNumbers = false
+trace = false
+verbose = false
+workingFolderCurrent = false
+[markup.asciidocExt.attributes]
+
+
+[markup.blackFriday]
+angledQuotes = false
+footnoteAnchorPrefix = ''
+footnoteReturnLinkContents = ''
+fractions = true
+hrefTargetBlank = false
+latexDashes = true
+nofollowLinks = false
+noreferrerLinks = false
+plainIDAnchors = false
+skipHTML = false
+smartDashes = true
+smartypants = true
+smartypantsQuotesNBSP = false
+taskLists = true
+
+[markup.goldmark]
+[markup.goldmark.extensions]
+definitionList = true
+footnote = true
+linkify = true
+strikethrough = true
+table = true
+taskList = true
+typographer = true
+
+[markup.goldmark.parser]
+autoHeadingID = true
+autoHeadingIDType = 'blackfriday'
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+
+
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = false
+xhtml = false
+
+
+[markup.highlight]
+anchorLineNos = false
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+lineAnchors = ''
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = true
+style = 'monokai'
+tabWidth = 4
+
+
+
+[markup.tableOfContents]
+endLevel = 6
+ordered = false
+startLevel = 1
+
+
+
+[languages.zh]
+languageName = '中文版'
+contentDir = 'content'
+weight = 1
+
+[languages]
+[languages.en]
+languageName = 'English'
+contentDir = 'content.en'
+weight = 2
+

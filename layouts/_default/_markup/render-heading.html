@@ -1,0 +1,7 @@
+
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+    <a href="#{{ .Anchor | safeURL }}">¶</a>
+{{ .Text | safeHTML }}
+</h{{ .Level }}>
+
+{{ .Text | safeHTML }}: {{ .Text }}: {{ .Anchor }}: {{ .PlainText }}: {{ .Attributes }}
