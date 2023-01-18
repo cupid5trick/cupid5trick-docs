@@ -1,0 +1,78 @@
+baseurl: /
+title: cupid5trick 技术文档
+languageCode: zh-cn
+DefaultContentLanguage: zh-cn
+hasCJKLanguage: true
+paginate: '10'
+theme: default
+enableRobotsTXT: true
+enableGitInfo: false
+dataDir: data
+contentDir: content
+archetypeDir: archetypes
+assetDir: assets
+configDir: config
+publishDir: public
+themesDir: themes
+Author:
+  name: cupid5trick
+  bio: The Scout Master is the leader of this local scout group
+  avatar: img/avatar.png
+Params:
+  description: 欢迎来到 cupid5trick 的文章发布网站
+  copyright: cupid5trick
+  opengraph: true
+  schema: true
+  twitter_cards: true
+  readmore: false
+  authorbox: true
+  toc: true
+  pager: true
+  indexPager: true
+  post_meta:
+    - author
+    - date
+    - categories
+    - translations
+  mainSections:
+    - post
+    - blog
+    - news
+  dateformat: 2006.01.02
+  style:
+    vars:
+      highlightColor: '#003056'
+  logo:
+    image: img/placeholder.png
+    header: img/header.jpg
+    title: cupid5trick | 丘比特的圈套
+    subtitle: cupid5trick 的文章发布站
+  sidebar:
+    home: right
+    list: left
+    single: false
+    widgets:
+      - search
+      - recent
+      - categories
+      - taglist
+      - social
+      - languages
+  widgets:
+    recent_num: 10
+    tags_counter: true
+  footer:
+    text: '[Imprint and Privacy](/imprint)'
+    right: Donate!
+  giscus:
+    enabled: true
+menu:
+  main:
+    - identifier: index
+      name: 首页
+      url: /
+      weight: 1
+    - identifier: rss
+      name: RSS
+      url: /index.xml
+      weight: 2
