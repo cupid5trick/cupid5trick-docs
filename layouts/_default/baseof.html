@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+  {{- if .Site.Params.opengraph }}
+  {{ if and (not .Params.images) (.Params.thumbnail) }}<meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />{{ end }}
+  {{ template "_internal/opengraph.html" . }}
+  {{- end }}
+  {{- if .Site.Params.schema }}
+  {{ template "_internal/schema.html" . }}
+  {{- end }}
+  {{- if .Site.Params.twitter_cards }}
+  {{ if and (not .Params.images) (.Params.thumbnail) }}<meta property="twitter:image" content="{{ .Params.thumbnail | absURL }}" />{{ end }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{- end }}
+
+  {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{- range .Site.Params.customCSS }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
+  {{- end }}
+  {{- range .Params.customCSS }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
+  {{- end }}
+
+  {{- with .OutputFormats.Get "rss" }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+  {{- end }}
+
+  {{ partial "favicon" . }}
+  {{ partial "perpagehead" . }}
+  {{- if not .Site.IsServer }}
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{- end }}
+
+  {{/*  Support inline math and block math by using mathjax  */}}
+
+  {{/*  <style>
+  .has-mathjax {
+    visibility: hidden;
+  }
+</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      displayMath: [
+        ["$$", "$$"],
+        ["\[", "\]"],
+      ],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    window.MathJax = {
+      startup: {
+        pageReady: () => {
+          return MathJax.startup.defaultPageReady().then(() => {
+            for (let element of document.getElementsByClassName("has-mathjax")) {
+              element.style.visibility = "visible"
+            }
+          });
+        }
+      }
+    };
+  </script>  */}}
+
+  {{/*  Support inline math and block math by using katex */}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+
+  <!-- The loading of KaTeX is deferred to speed up page rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+          onload="renderMathInElement(document.body);"></script>
+  {{/*  latex equation copy plugin  */}}
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
+  <script>
+    window.WebFontConfig = {
+      custom: {
+        families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+          'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+          'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+          'KaTeX_Size4', 'KaTeX_Typewriter'],
+      },
+    };
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+    });
+  </script>
+</head>
+<body class="body">
+{{ partial "header" . }}
+<div class="container wrapper flex">
+  <div class="primary">
+    {{ block "main" . }}
+    {{ with .Content }}
+    <div class="content main__content clearfix">
+      {{ . }}
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ partial "sidebar.html" . }}
+</div>
+{{ partial "footer" . }}
+<script async defer src="{{ "js/menu.js" | relURL }}"></script>
+{{ range .Site.Params.customJS -}}
+<script src="{{ . | relURL }}"></script>
+{{- end }}
+{{ if .Site.Params.customPartial }}{{ partial .Site.Params.customPartial . }}{{ end }}
+{{ partial "perpagebody" . }}
+</body>
+</html>

@@ -4,7 +4,7 @@ languageCode: zh-cn
 DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 paginate: '10'
-theme: default
+theme: hugo-dpsg
 enableRobotsTXT: true
 enableGitInfo: false
 dataDir: data
