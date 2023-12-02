@@ -1,0 +1,430 @@
+baseurl: /
+title: cupid5trick 技术文档
+description: |
+  欢迎来到 cupid5trick 的文章发布网站
+languageCode: zh-cn
+DefaultContentLanguage: zh-cn
+hasCJKLanguage: true
+paginate: '10'
+theme: LoveIt
+enableRobotsTXT: true
+enableGitInfo: true
+dataDir: data
+contentDir: content
+archetypeDir: archetypes
+assetDir: assets
+configDir: config
+publishDir: public
+themesDir: themes
+
+author:
+  name: cupid5trick
+  email: guo1663671@gmail.com
+  link: ""
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
+# Permalinks 配置 (https://gohugo.io/content-management/urls/#permalinks)
+permalinks:
+  posts: ":filename"
+
+### 导航栏菜单配置
+menu:
+  main:
+    - identifier: index
+      name: 首页
+      url: /
+      weight: 1
+    - identifier: posts
+      name: 最新文章
+      url: /posts
+      weight: 2
+    - identifier: categories
+      name: 专栏
+      url: /categories
+      weight: 3
+    - identifier: tags
+      name: 标签
+      url: /tags
+      weight: 4
+    - identifier: rss
+      name: RSS
+      url: /index.xml
+      weight: 999
+
+### 用于 Hugo 输出文档的设置
+outputs:
+  home: [HTML, RSS, JSON]
+  page: ["HTML", "MarkDown"]
+  section: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+  taxonomyTerm: ["HTML"]
+
+### markdown 解析器配置
+markup:
+  tableOfContents:
+    endLevel: 6
+    ordered: false
+    startLevel: 1
+  highlight:
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: "#"
+    hl_inline: false
+    lineAnchors: "#"
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses: false
+    noHl: true
+#    style: github
+    tabWidth: 2
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderer:
+      hardWraps: false
+      unsafe: false
+      xhtml: false
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.62.0
+params:
+  defaultTheme: auto
+  gitRepo: "https://github.com/cupid5trick/cupid5trick-docs"
+  fingerprint: "sha256"
+  dateFormat: 2006-01-02
+  title: cupid5trick 技术文档
+  description: 欢迎来到 cupid5trick 的文章发布网站
+  images: []
+  header:
+    desktopMode: fixed
+    mobileMode: auto
+    title:
+      logo: ""
+      name: cupid5trick 技术文档
+      pre: ""
+      post: ""
+      typeit: false
+  footer:
+    enable: true
+    custom: ""
+    hugo: true
+    copyright: true
+    author: true
+    since: 2022
+    # TODO icp 备案信息 和 知识共享许可证配置
+    icp: ""
+    license: ""
+  section:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+  list:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+  app:
+    title: cupid5trick 技术文档
+    noFavicon: false
+    svgFavicon: ""
+    themeColor: "#ffffff"
+    iconColor: "#5bbad5"
+    tileColor: "#da532c"
+  search:
+    enable: true
+    type: lunr
+    contentLength: 4000
+    placeholder: ""
+    maxResultLength: 10
+    snippetLength: 30
+    highlightTag: em
+    absoluteURL: false
+    algolia:
+      index: ""
+      appID: ""
+      searchKey: ""
+  # 主页配置
+  home:
+    rss: 10
+    profile:
+      enable: true
+      gravatarEmail: ""
+      avatarURL: ""
+      title: cupid5trick 技术文档
+      subtitle: 欢迎来到 cupid5trick 的文章发布网站
+      typeit: true
+      social: true
+      disclaimer: ""
+    posts:
+      enable: true
+      paginate: 20
+  social:
+    GitHub: ""
+    Linkedin: ""
+    Twitter: ""
+    Instagram: ""
+    Facebook: ""
+    Telegram: ""
+    Medium: ""
+    Gitlab: ""
+    Youtubelegacy: ""
+    Youtubecustom: ""
+    Youtubechannel: ""
+    Tumblr: ""
+    Quora: ""
+    Keybase: ""
+    Pinterest: ""
+    Reddit: ""
+    Codepen: ""
+    FreeCodeCamp: ""
+    Bitbucket: ""
+    Stackoverflow: ""
+    Weibo: ""
+    Odnoklassniki: ""
+    VK: ""
+    Flickr: ""
+    Xing: ""
+    Snapchat: ""
+    Soundcloud: ""
+    Spotify: ""
+    Bandcamp: ""
+    Paypal: ""
+    Fivehundredpx: ""
+    Mix: ""
+    Goodreads: ""
+    Lastfm: ""
+    Foursquare: ""
+    Hackernews: ""
+    Kickstarter: ""
+    Patreon: ""
+    Steam: ""
+    Twitch: ""
+    Strava: ""
+    Skype: ""
+    Whatsapp: ""
+    Zhihu: ""
+    Douban: ""
+    Angellist: ""
+    Slidershare: ""
+    Jsfiddle: ""
+    Deviantart: ""
+    Behance: ""
+    Dribbble: ""
+    Wordpress: ""
+    Vine: ""
+    Googlescholar: ""
+    Researchgate: ""
+    Mastodon: ""
+    Thingiverse: ""
+    Devto: ""
+    Gitea: ""
+    XMPP: ""
+    Matrix: ""
+    Bilibili: ""
+    Discord: ""
+    DiscordInvite: ""
+    Lichess: ""
+    ORCID: ""
+    Pleroma: ""
+    Kaggle: ""
+    MediaWiki: ""
+    Plume: ""
+    HackTheBox: ""
+    RootMe: ""
+    Email: ""
+    Phone: ""
+    RSS: ""
+  page:
+    hiddenFromHomePage: false
+    hiddenFromSearch: false
+    twemoji: false
+    lightgallery: false
+    ruby: true
+    fraction: true
+    fontawesome: true
+    linkToMarkdown: true
+    rssFullText: false
+    toc:
+      enable: true
+      keepStatic: false
+      auto: false
+    code:
+      copy: true
+      maxShownLines: 50
+    math:
+      enable: true
+      inlineLeftDelimiter: ""
+      inlineRightDelimiter: ""
+      blockLeftDelimiter: ""
+      blockRightDelimiter: ""
+      copyTex: true
+      mhchem: true
+    mapbox:
+      accessToken: ""
+      lightStyle: mapbox://styles/mapbox/light-v10?optimize=true
+      darkStyle: mapbox://styles/mapbox/dark-v10?optimize=true
+      navigation: true
+      geolocate: true
+      scale: true
+      fullscreen: true
+    share:
+      enable: true
+      Twitter: true
+      Facebook: true
+      Linkedin: false
+      Whatsapp: false
+      Pinterest: false
+      Tumblr: false
+      HackerNews: true
+      Reddit: false
+      VK: false
+      Buffer: false
+      Xing: false
+      Line: true
+      Instapaper: false
+      Pocket: false
+      Flipboard: false
+      Weibo: false
+      Blogger: false
+      Baidu: false
+      Odnoklassniki: false
+      Evernote: false
+      Skype: false
+      Trello: false
+      Mix: false
+    comment:
+      # TODO 开启评论
+      enable: true
+      disqus:
+        enable: false
+        shortname: ""
+      gitalk:
+        enable: false
+        owner: ""
+        repo: ""
+        clientId: ""
+        clientSecret: ""
+      valine:
+        enable: false
+        appId: ""
+        appKey: ""
+        placeholder: ""
+        avatar: mp
+        meta: ""
+        pageSize: 10
+        lang: ""
+        visitor: true
+        recordIP: true
+        highlight: true
+        enableQQ: false
+        serverURLs: ""
+        emoji: ""
+      facebook:
+        enable: false
+        width: 100%
+        numPosts: 10
+        appId: ""
+        languageCode: ""
+      telegram:
+        enable: false
+        siteID: ""
+        limit: 5
+        height: ""
+        color: ""
+        colorful: true
+        dislikes: false
+        outlined: false
+      commento:
+        enable: false
+      utterances:
+        enable: false
+        repo: ""
+        issueTerm: pathname
+        label: ""
+        lightTheme: github-light
+        darkTheme: github-dark
+      giscus:
+        enable: false
+        repo: ""
+        repoId: ""
+        category: Announcements
+        categoryId: ""
+        lang: ""
+        mapping: pathname
+        reactionsEnabled: "1"
+        emitMetadata: "0"
+        inputPosition: bottom
+        lazyLoading: false
+        lightTheme: light
+        darkTheme: dark
+    library:
+      css: {}
+      js: {}
+    # SEO
+    seo:
+      images: []
+      publisher:
+        name: ""
+        logoUrl: ""
+  typeit:
+    speed: 100
+    cursorSpeed: 1000
+    cursorChar: "|"
+    duration: -1
+  # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
+  # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu
+  verification:
+    google: ""
+    bing: ""
+    yandex: ""
+    pinterest: ""
+    baidu: ""
+  seo:
+    image: ""
+    thumbnailUrl: ""
+  analytics:
+    enable: false
+    google:
+      id: ""
+      anonymizeIP: true
+    fathom:
+      id: ""
+      server: ""
+    plausible:
+      dataDomain: ""
+    yandexMetrica:
+      id: ""
+  # Cookie consent config
+  # Cookie 许可配置
+  cookieconsent:
+    enable: false
+    content:
+      message: ""
+      dismiss: ""
+      link: ""
+  cdn:
+    data: jsdelivr.yml
+  compatibility:
+    polyfill: false
+    objectFit: false

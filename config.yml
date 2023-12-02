@@ -4,9 +4,9 @@ languageCode: zh-cn
 DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 paginate: '10'
-theme: hugo-dpsg
+theme: LoveIt
 enableRobotsTXT: true
-enableGitInfo: false
+enableGitInfo: true
 dataDir: data
 contentDir: content
 archetypeDir: archetypes
@@ -14,6 +14,7 @@ assetDir: assets
 configDir: config
 publishDir: public
 themesDir: themes
+
 Author:
   name: cupid5trick
   bio: The Scout Master is the leader of this local scout group
@@ -35,13 +36,15 @@ Params:
     - categories
     - translations
   mainSections:
-    - post
+    - posts
     - blog
     - news
   dateformat: 2006.01.02
   style:
     vars:
       highlightColor: '#003056'
+  customCSS:
+    - css/default.css
   logo:
     image: img/placeholder.png
     header: img/header.jpg
