@@ -81,7 +81,7 @@ markup:
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses: false
     noHl: true
-#    style: github
+    style: github
     tabWidth: 2
   goldmark:
     extensions:
@@ -135,7 +135,8 @@ params:
     since: 2022
     # TODO icp 备案信息 和 知识共享许可证配置
     icp: ""
-    license: ""
+    license: |
+
   section:
     paginate: 20
     dateFormat: 01-02
@@ -180,7 +181,7 @@ params:
       enable: true
       paginate: 20
   social:
-    GitHub: ""
+    GitHub: "cupid5trick"
     Linkedin: ""
     Twitter: ""
     Instagram: ""
@@ -254,7 +255,7 @@ params:
     RootMe: ""
     Email: ""
     Phone: ""
-    RSS: ""
+    RSS: true
   page:
     hiddenFromHomePage: false
     hiddenFromSearch: false
@@ -264,7 +265,7 @@ params:
     fraction: true
     fontawesome: true
     linkToMarkdown: true
-    rssFullText: false
+    rssFullText: true
     toc:
       enable: true
       keepStatic: false
@@ -281,6 +282,7 @@ params:
       copyTex: true
       mhchem: true
     mapbox:
+      # access token of Mapbox GL JS
       accessToken: ""
       lightStyle: mapbox://styles/mapbox/light-v10?optimize=true
       darkStyle: mapbox://styles/mapbox/dark-v10?optimize=true
@@ -305,7 +307,7 @@ params:
       Instapaper: false
       Pocket: false
       Flipboard: false
-      Weibo: false
+      Weibo: true
       Blogger: false
       Baidu: false
       Odnoklassniki: false
@@ -365,17 +367,18 @@ params:
         lightTheme: github-light
         darkTheme: github-dark
       giscus:
-        enable: false
-        repo: ""
-        repoId: ""
-        category: Announcements
-        categoryId: ""
+        # built from giscus: <https://giscus.app/zh-CN>
+        enable: true
+        repo: "cupid5trick/cupid5trick-docs"
+        repoId: "R_kgDOGSiW-g"
+        category: "Comments"
+        categoryId: "DIC_kwDOGSiW-s4Cc8C1"
         lang: ""
-        mapping: pathname
+        mapping: title
         reactionsEnabled: "1"
         emitMetadata: "0"
-        inputPosition: bottom
-        lazyLoading: false
+        inputPosition: top
+        lazyLoading: true
         lightTheme: light
         darkTheme: dark
     library:
@@ -404,9 +407,9 @@ params:
     image: ""
     thumbnailUrl: ""
   analytics:
-    enable: false
+    enable: true
     google:
-      id: ""
+      id: "G-SX3V41BY9E"
       anonymizeIP: true
     fathom:
       id: ""
