@@ -1,0 +1,16 @@
+# build from Host on Netlify | Hugo: https://gohugo.io/hosting-and-deployment/hosting-on-netlify/#configure-hugo-version-in-netlify
+[build]
+  publish = "public"
+  command = "hugo --config config-loveit.yaml -e production --logLevel debug --minify -DEF --gc "
+
+  [build.environment]
+    HUGO_VERSION = "0.122.0"
+
+[context.production.environment]
+  HUGO_ENABLEGITINFO = "true"
+
+[context.deploy-preview]
+  command = "hugo --config config-loveit.yaml -e production --logLevel debug --minify -DEF --gc -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --config config-loveit.yaml -e production --logLevel debug --minify -DEF --gc -b $DEPLOY_PRIME_URL"
