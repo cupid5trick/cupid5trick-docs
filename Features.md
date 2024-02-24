@@ -1,3 +1,10 @@
+---
+title: Features
+date: 2024-02-24T02:45:11+08:00
+lastmod: 2024-02-24T02:49:08+08:00
+license: CC BY-NC 4.0
+---
+
 # Overview
 
 // TODO update this part
@@ -21,4 +28,4 @@ hugo server --config .\config-loveit.yaml -e production -wDF
 
 - "See also" section at the end of a post
 - LICENSE claim template
-- Quick share to weixin, juejin, csdn ...etc.
+- Quick share to weixin, juejin, csdn …etc.

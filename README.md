@@ -1,6 +1,13 @@
+---
+title: README
+date: 2024-02-24T02:45:11+08:00
+lastmod: 2024-02-24T02:45:58+08:00
+license: CC BY-NC 4.0
+---
+
 # Document Archive
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/476c822e-4b12-4cdf-b11a-25a930f3b633/deploy-status)](https://app.netlify.com/sites/cupid5trick-docs/deploys)
+[![Netlify Status](_attachments/Maven/8ab4d0c5e142cd982031decab56a3fca_MD5.svg)](https://app.netlify.com/sites/cupid5trick-docs/deploys)
 
 A public hosted document archive hugo website like flink-doc.
 
