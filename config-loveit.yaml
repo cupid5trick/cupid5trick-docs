@@ -1,7 +1,6 @@
-baseurl: /
-title: cupid5trick 技术文档
+title: cupid5trick
 description: |
-  欢迎来到 cupid5trick 的文章发布网站
+  This is cupid5trick.
 languageCode: zh-cn
 DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
@@ -16,7 +15,7 @@ assetDir: assets
 configDir: config
 publishDir: public
 themesDir: themes
-
+baseurl: /
 author:
   name: cupid5trick
   email: guo1663671@gmail.com
@@ -49,6 +48,10 @@ menu:
       name: 标签
       url: /tags
       weight: 4
+    - identifier: notes
+      name: 笔记
+      url: /notes
+      weight: 5
     - identifier: rss
       name: RSS
       url: /index.xml
@@ -108,21 +111,22 @@ markup:
 module:
   hugoVersion:
     extended: true
-    min: 0.62.0
+    min: 0.121.0
 params:
+  staticUrl: /media/
   defaultTheme: auto
   gitRepo: "https://github.com/cupid5trick/cupid5trick-docs"
   fingerprint: "sha256"
   dateFormat: 2006-01-02
-  title: cupid5trick 技术文档
-  description: 欢迎来到 cupid5trick 的文章发布网站
+  title: cupid5trick
+  description: This is cupid5trick
   images: []
   header:
     desktopMode: fixed
     mobileMode: auto
     title:
-      logo: ""
-      name: cupid5trick 技术文档
+      logo: "/favicon.ico"
+      name: cupid5trick
       pre: ""
       post: ""
       typeit: false
@@ -146,7 +150,7 @@ params:
     dateFormat: 01-02
     rss: 10
   app:
-    title: cupid5trick 技术文档
+    title: cupid5trick
     noFavicon: false
     svgFavicon: ""
     themeColor: "#ffffff"
@@ -171,9 +175,9 @@ params:
     profile:
       enable: true
       gravatarEmail: ""
-      avatarURL: ""
-      title: cupid5trick 技术文档
-      subtitle: 欢迎来到 cupid5trick 的文章发布网站
+      avatarURL: "/favicon.ico"
+      title: cupid5trick
+      subtitle: This is cupid5trick
       typeit: true
       social: true
       disclaimer: ""
@@ -272,7 +276,7 @@ params:
       auto: false
     code:
       copy: true
-      maxShownLines: 50
+      maxShownLines: 30
     math:
       enable: true
       inlineLeftDelimiter: ""
@@ -298,16 +302,16 @@ params:
       Whatsapp: false
       Pinterest: false
       Tumblr: false
-      HackerNews: true
-      Reddit: false
+      HackerNews: false
+      Reddit: true
       VK: false
       Buffer: false
       Xing: false
-      Line: true
+      Line: false
       Instapaper: false
       Pocket: false
       Flipboard: false
-      Weibo: true
+      Weibo: false
       Blogger: false
       Baidu: false
       Odnoklassniki: false
@@ -388,8 +392,8 @@ params:
     seo:
       images: []
       publisher:
-        name: ""
-        logoUrl: ""
+        name: "cupid5trick"
+        logoUrl: "/favicon.ico"
   typeit:
     speed: 100
     cursorSpeed: 1000

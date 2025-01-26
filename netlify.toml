@@ -1,7 +1,7 @@
 # build from Host on Netlify | Hugo: https://gohugo.io/hosting-and-deployment/hosting-on-netlify/#configure-hugo-version-in-netlify
 [build]
   publish = "public"
-  command = "hugo --config config-loveit.yaml -e production --logLevel debug --minify -DEF --gc "
+  command = "GITHUB_TOKEN=$GITHUB_TOKEN && bash build.sh . /tmp/posts archive-public.tgz cupid5trick/cupid5trick-docs"
 
   [build.environment]
     HUGO_VERSION = "0.122.0"

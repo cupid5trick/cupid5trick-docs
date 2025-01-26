@@ -3,4 +3,4 @@
 	url = https://github.com/pfadfinder-konstanz/hugo-dpsg
 [submodule "loveit"]
 	path = themes/LoveIt
-	url = https://github.com/cupid5trick/HugoLoveIt.git
+	url = git@github.com:cupid5trick/HugoLoveIt
