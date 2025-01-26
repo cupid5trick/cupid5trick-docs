@@ -20,8 +20,8 @@ else
   posts_tgz=$3
   site_repo=$4
   GITHUB_TOKEN=$GITHUB_TOKEN
-  ls -act $site_dir
   mkdir -p {$posts_dir,$site_dir}
+  ls -act $site_dir
 fi
 
 fetch_archive ()
@@ -56,7 +56,7 @@ fetch_tarball ()
 fetch_archive cupid5trick/DocumentSync $GITHUB_TOKEN $posts_tgz
 # fetch_tarball cupid5trick/cupid5trick-docs $GITHUB_TOKEN $site_tgz
 
-tar --strip-components 1 -zxf $posts_tgz -C posts/
+tar --strip-components 1 -zxf $posts_tgz -C $posts_dir/
 # git clone --recurse-submodules https://github.com/$site_repo.git $site_dir
 
 mv $posts_dir/{00-阅读,10-ComputeScience,20-工作,30-玩玩游戏,40-学点法律,90-MISC} $site_dir/content/posts/
@@ -82,5 +82,3 @@ build_site () {
 
 build_site
 
-# not to include when committing !!!
-hugo serve --bind 0.0.0.0 --config config-loveit.yaml -e production -DF --minify 
