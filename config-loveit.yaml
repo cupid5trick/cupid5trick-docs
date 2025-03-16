@@ -52,6 +52,10 @@ menu:
       name: 笔记
       url: /notes
       weight: 5
+    - identifier: obsidian
+      name: 知识库
+      url: /obsidian
+      weight: 6
     - identifier: rss
       name: RSS
       url: /index.xml

@@ -4,3 +4,7 @@
 [submodule "loveit"]
 	path = themes/LoveIt
 	url = https://github.com/cupid5trick/HugoLoveIt.git
+[submodule "obsidian_quartz"]
+	path = obsidian_quartz
+	url = https://github.com/cupid5trick/obsidian_quartz.git
+	branch = v4
