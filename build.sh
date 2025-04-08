@@ -68,7 +68,7 @@ fetch() {
 
     cp -r $posts_dir/{00-阅读,10-ComputeScience,20-工作,30-玩玩游戏,40-学点法律,90-MISC} $site_dir/content/posts/
     # mkdir -p site/static/media/posts/ && mv posts/Data/attachments/* site/static/media/posts/
-    find $posts_dir/Data/attachments/ -type f -exec mv {} $site_dir/static/media/ \;
+    find $posts_dir/Data/attachments/ -type f -exec cp {} $site_dir/static/media/ \;
 
     ls -act $site_dir/content
     # ls -act $site_dir/static/media
