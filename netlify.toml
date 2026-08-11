@@ -5,6 +5,9 @@
 
   [build.environment]
     HUGO_VERSION = "0.122.0"
+    # Quartz v5 requires Node >= 22.18 (runtime TS type-stripping). Must match
+    # obsidian_quartz/.node-version (v22.20.0).
+    NODE_VERSION = "22.20.0"
 
 [context.production.environment]
   HUGO_ENABLEGITINFO = "true"

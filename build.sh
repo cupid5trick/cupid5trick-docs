@@ -3,17 +3,20 @@
 set -exu
 
 Usage() {
-  # To debug this build script:
-  """
-  for workflow testing:
-  export GITHUB_TOKEN=xxxxxx
-  sudo act -j trigger-hook   --env GITHUB_TOKEN=$GITHUB_TOKEN   --bind $(pwd)/98-publish:$(pwd)/98-publish   --pull=false
+  cat <<'EOF'
+Usages:
+  $0 posts_dir site_dir archive_name site_repo   # production build (Netlify)
+  $0 local-dev                                   # local dev: prepare only, then hugo serve
 
-  local development:
+Environments:
+  GITHUB_TOKEN         Netlify secret; fetches the DocumentSync release archive
+  QUARTZ_ACL_PASSWORD  Optional; only needed if the archive contains @acl/private
+                       notes (see obsidian_quartz/docs/advanced/protected-notes.md).
+
+Local development:
   ./build.sh local-dev && hugo serve --config config-loveit.yaml -e production -DEF --minify --bind 0.0.0.0 --port 1313
-  """
-  echo "Usages: $0 posts_dir, site_dir, archive_name, site_repo"
-  echo "Environments: GITHUB_TOKEN"
+  # to also serve the Quartz site: cd obsidian_quartz && ./dev_setup.sh <vault>
+EOF
   exit 1
 }
 
@@ -89,15 +92,30 @@ build_site() {
   hugo --config config-loveit.yaml -e production --minify -DEF --gc
 }
 
-# build obsidian site
+# build obsidian site (Quartz v5 static build)
 build_obsidian() {
-  chmod +x *.sh
-  ./dev_setup.sh $(realpath $posts_dir)
-  npx quartz build -o ../public/obsidian --baseDir ../public/obsidian
+  # obsidian_quartz is a submodule pinned to a v5 commit (see .gitmodules / PR #1).
+  local site_abs_dir
+  site_abs_dir="$(realpath "$site_dir")"
+  cd "$site_abs_dir/obsidian_quartz"
+
+  # Source build-time secrets (QUARTZ_ACL_PASSWORD) from a gitignored acl.env if present
+  if [ -f "./acl.env" ]; then
+    set -a
+    . ./acl.env
+    set +a
+  fi
+
+  # v5: `-d` selects the content dir, `-o` the output. Do NOT use dev_setup.sh here —
+  # it ends in `npx quartz build --serve`, which would block a production build.
+  # The base URL is taken from quartz.config.yaml, not a build flag.
+  npm install
+  npx quartz plugin install
+  npx quartz build -d "$(realpath "$posts_dir")" -o "$site_abs_dir/public/obsidian"
 }
 
 rm -rf public obsidian_quartz/public
 
 fetch
 build_site
-cd obsidian_quartz && build_obsidian
+build_obsidian
