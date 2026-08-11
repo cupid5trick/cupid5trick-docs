@@ -7,4 +7,4 @@
 [submodule "obsidian_quartz"]
 	path = obsidian_quartz
 	url = https://github.com/cupid5trick/obsidian_quartz.git
-	branch = v4
+	branch = v5
